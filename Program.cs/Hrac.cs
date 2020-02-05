@@ -15,8 +15,8 @@ namespace SlovniFotbal
 
         public Hrac(string name, int age)
         {
-            this.name = getName();
-            this.age = getAge();
+            this.name = name;
+            this.age = age;
 
         }
 
@@ -45,7 +45,7 @@ namespace SlovniFotbal
 
         }
 
-        public int getRound()
+        public static int getRound()
         {
             return round;
         }
@@ -65,8 +65,6 @@ namespace SlovniFotbal
         {
             this.points = points++;
         }
-
-
 
     }
 }

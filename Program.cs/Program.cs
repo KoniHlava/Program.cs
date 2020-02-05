@@ -15,23 +15,39 @@ namespace SlovniFotbal
             char LastLetterCHARFE;
             char LastLetterCHARSE;
             char FirstLetterCHARSE;
-            Hrac Player1 = new Hrac("XXX", 0);
-            Hrac Player2 = new Hrac("XXX", 0);
+            List<Hrac> listOfPlayers = new List<Hrac>();
+            char LastChar;
+            string name;
+            int age;
+
+            for (int i = 0; i < 2; i++)
+            {
+                Console.WriteLine("Napiš jméno hráče: ");
+                name = Console.ReadLine();
+                Console.WriteLine("Napiš věk hráče: ");
+                age = int.Parse(Console.ReadLine());
+                Hrac player = new Hrac(name, age);
+                listOfPlayers.Add(player);
+            }
+
             Console.Write("Zadej první slovo: ");
 
-            while (true)
+            string FirstPlayer;
+
+            do
             {
-                string FirstPlayer = Console.ReadLine();
+                FirstPlayer = Console.ReadLine();
                 LastLetterINTFE = FirstPlayer.Length - 1;
                 LastLetterCHARFE = FirstPlayer[LastLetterINTFE];
-                Console.WriteLine("Nyní hraje, " + Player1.WriteName() + " a musí zadat slovo které začíná na: " + LastLetterCHARFE); ;
+                Console.WriteLine("Nyní hraje, " + listOfPlayers[0].getName() + " a musí zadat slovo které začíná na: " + LastLetterCHARFE); ;
                 string SecondPlayer = Console.ReadLine();
                 LastLetterINTSE = SecondPlayer.Length - 1;
                 LastLetterCHARSE = SecondPlayer[LastLetterINTSE];
                 FirstLetterCHARSE = SecondPlayer[0];
-                Console.WriteLine("Nyní hraje, " + Player2.WriteName() + " a musí zadat slovo které začíná na: " + LastLetterCHARSE);
-                Console.WriteLine("Právě probíhá kolo " + Player1.getRound());
-            }
+                Console.WriteLine("Nyní hraje, " + listOfPlayers[1].getName() + " a musí zadat slovo které začíná na: " + LastLetterCHARSE);
+                Console.WriteLine("Právě probíhá kolo " + Hrac.getRound());
+                LastChar = SecondPlayer[SecondPlayer.Length - 1];
+            } while ((FirstPlayer[0] == LastChar));
 
         }
     }
