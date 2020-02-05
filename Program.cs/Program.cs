@@ -39,6 +39,7 @@ namespace SlovniFotbal
                 FirstPlayer = Console.ReadLine();
                 if (!(LastChar == FirstPlayer[0]) && !(LastChar == '-'))
                 {
+                    listOfPlayers[1].setPoints();
                     break; 
                 }
                 LastChar = FirstPlayer[FirstPlayer.Length - 1];
@@ -48,12 +49,14 @@ namespace SlovniFotbal
                 string SecondPlayer = Console.ReadLine();
                 if (!(LastChar == SecondPlayer[0]) && !(LastChar == '-'))
                 {
+                    listOfPlayers[0].setPoints();
                     break;
                 }
                 LastLetterINTSE = SecondPlayer.Length - 1;
                 LastLetterCHARSE = SecondPlayer[LastLetterINTSE];
                 FirstLetterCHARSE = SecondPlayer[0];
                 Console.WriteLine("Nyní hraje, " + listOfPlayers[1].getName() + " a musí zadat slovo které začíná na: " + LastLetterCHARSE);
+                Hrac.setRound();
                 Console.WriteLine("Právě probíhá kolo " + Hrac.getRound());
                 LastChar = SecondPlayer[SecondPlayer.Length - 1];
             }
