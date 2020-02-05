@@ -10,6 +10,10 @@ namespace Program.cs
     {
         static void Main(string[] args)
         {
+
+
+
+
         }
     }
 }
