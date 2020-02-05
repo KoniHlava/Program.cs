@@ -8,7 +8,7 @@ namespace SlovniFotbal
 {
     class Hrac
     {
-        private int round = 0;
+        private static int round = 0;
         private string name;
         private int age;
         private int points;
@@ -20,32 +20,50 @@ namespace SlovniFotbal
 
         }
 
-        public string getName()
+        public void setName(string name)
         {
-            Console.Write("Napiš jméno hráče: ");
-            name = Console.ReadLine();
-            return name;
+            //Console.Write("Napiš jméno hráče: ");
+            //name = Console.ReadLine();
+            this.name = name;
         }
-        public string WriteName()
+        public string getName()
         {
             return name;
         }
         public int getAge()
         {
-            Console.Write("Napiš věk hráče: ");
-            age = int.Parse(Console.ReadLine());
+            //Console.Write("Napiš věk hráče: ");
+            //age = int.Parse(Console.ReadLine());
             return age;
+        }
+
+        public void setAge(int age)
+        {
+            //Console.Write("Napiš věk hráče: ");
+            //age = int.Parse(Console.ReadLine());
+            this.age = age;
+
         }
 
         public int getRound()
         {
-            round++;
             return round;
         }
+
+        public static void setRound()
+        {
+            round++;
+        }
+
+
         public int getPoints()
         {
-            points++;
             return points;
+        }
+
+        public void setPoints()
+        {
+            this.points = points++;
         }
 
 
