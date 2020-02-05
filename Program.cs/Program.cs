@@ -33,29 +33,40 @@ namespace SlovniFotbal
             Console.Write("Zadej první slovo: ");
 
             string FirstPlayer;
-
-            do
+            LastChar = '-';
+            while(true)
             {
                 FirstPlayer = Console.ReadLine();
+                if (!(LastChar == FirstPlayer[0]) && !(LastChar == '-'))
+                {
+                    break; 
+                }
+                LastChar = FirstPlayer[FirstPlayer.Length - 1];
                 LastLetterINTFE = FirstPlayer.Length - 1;
                 LastLetterCHARFE = FirstPlayer[LastLetterINTFE];
                 Console.WriteLine("Nyní hraje, " + listOfPlayers[0].getName() + " a musí zadat slovo které začíná na: " + LastLetterCHARFE); ;
                 string SecondPlayer = Console.ReadLine();
+                if (!(LastChar == SecondPlayer[0]) && !(LastChar == '-'))
+                {
+                    break;
+                }
                 LastLetterINTSE = SecondPlayer.Length - 1;
                 LastLetterCHARSE = SecondPlayer[LastLetterINTSE];
                 FirstLetterCHARSE = SecondPlayer[0];
                 Console.WriteLine("Nyní hraje, " + listOfPlayers[1].getName() + " a musí zadat slovo které začíná na: " + LastLetterCHARSE);
                 Console.WriteLine("Právě probíhá kolo " + Hrac.getRound());
                 LastChar = SecondPlayer[SecondPlayer.Length - 1];
-            } while ((FirstPlayer[0] == LastChar));
-
+            }
+            Console.WriteLine("Konec hry");
+            Console.ReadKey();
         }
+        
     }
 
 
 
 
 
-
+     
 
 }
